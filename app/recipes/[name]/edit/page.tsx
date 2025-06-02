@@ -22,11 +22,6 @@ export default function EditRecipe({ params }: { params: { name: string } }) {
   const decodedName = decodeURIComponent(params.name);
   console.log('编辑页面: 当前编辑的菜谱:', decodedName);
 
-  useEffect(() => {
-    console.log('编辑页面: params变化，重新获取菜谱:', decodedName);
-    fetchRecipe();
-  }, [params.name]);
-
   const fetchRecipe = async () => {
     try {
       setLoading(true);
@@ -62,6 +57,11 @@ export default function EditRecipe({ params }: { params: { name: string } }) {
       setLoading(false);
     }
   };
+
+  useEffect(() => {
+    console.log('编辑页面: params变化，重新获取菜谱:', decodedName);
+    fetchRecipe();
+  }, [params.name, decodedName]);
 
   const handleSubmit = async (values: Recipe) => {
     try {
@@ -111,7 +111,7 @@ export default function EditRecipe({ params }: { params: { name: string } }) {
           </Link>
         </div>
         <div style={{ textAlign: 'center', padding: '50px 0' }}>
-          <h2>未找到菜谱 "{decodedName}"</h2>
+          <h2>未找到菜谱 &quot;{decodedName}&quot;</h2>
           <p style={{ color: 'red', marginTop: '10px' }}>{error}</p>
           <Button 
             type="primary" 
