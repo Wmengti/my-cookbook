@@ -1,0 +1,92 @@
+:root {
+  --max-width: 1200px;
+  --border-radius: 8px;
+  --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
+    'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
+    'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
+
+  --foreground-rgb: 0, 0, 0;
+  --background-rgb: 255, 255, 255;
+  --primary-color: #1677ff;
+  --success-color: #52c41a;
+  --warning-color: #faad14;
+  --error-color: #f5222d;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.page-header {
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.page-title {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.recipe-card {
+  margin-bottom: 1rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.recipe-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.form-item {
+  margin-bottom: 1rem;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.form-input,
+.form-textarea,
+.form-select {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #d9d9d9;
+  border-radius: var(--border-radius);
+}
+
+.form-textarea {
+  min-height: 100px;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 1rem;
+} 

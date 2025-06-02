@@ -1,34 +1,60 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 我的菜谱
 
-## Getting Started
+一个简单的个人菜谱管理系统，基于Next.js和Ant Design构建。
 
-First, run the development server:
+## 功能特点
+
+- 查看菜谱列表
+- 添加、编辑和删除菜谱
+- 搜索菜谱
+- 查看菜谱详情
+- 随机生成N天的菜单（每天一荤一素）
+
+## 技术栈
+
+- Next.js 15
+- TypeScript
+- Ant Design 组件库
+- CSV 数据存储
+
+## 快速开始
+
+### 安装依赖
+
+```bash
+npm install
+```
+
+### 开发模式
 
 ```bash
 npm run dev
-# or
-yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 构建生产版本
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+### 启动生产版本
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+```bash
+npm start
+```
 
-## Learn More
+## 数据结构
 
-To learn more about Next.js, take a look at the following resources:
+菜谱数据存储在 `public/cookbook.csv` 文件中，格式如下：
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+| 菜名 | 类型 | 主要原料 | 配料/调料 | 做法 | 备注 |
+|------|------|---------|----------|------|------|
+| 红烧肉 | 荤菜 | 五花肉 | 酱油,白糖,葱姜蒜 | 1. 将五花肉切成块; 2. 焯水去血沫; 3. 放入酱油和白糖翻炒; 4. 加水炖至酥烂 | 下饭神器 |
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## 部署
 
-## Deploy on Vercel
+此项目可以轻松部署到Vercel平台。
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```bash
+npx vercel
+```
